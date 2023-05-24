@@ -6,6 +6,12 @@
 
 body {
     background-color: rgb(81, 81, 81);
+    transition: ease-in-out all 1000ms;
+    background-size: cover;
+}
+
+.hide {
+    display: none;
 }
 
 .game-section {
@@ -17,7 +23,7 @@ body {
 
 .game-container {
     background-color: #fff;
-    height: 75vh;
+    height: 85vh;
     width: 40%;
     border-radius: 5px;
     box-shadow: 2px 5px 5px 5px #0000004c;
@@ -31,15 +37,30 @@ body {
     font-family: sans-serif;
     text-align: center;
     font-weight: bolder;
-    margin-top: 10px;
+    margin-top: 15px;
 }
+
+
+.player-display-container {
+    font-family: sans-serif;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.game-adjust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 
 .game {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
-    margin: 50px 0;
+    width: 80%;
+    height: 80%;
 }
 
 .game-grid {
@@ -54,7 +75,42 @@ body {
 
 .square {
     background-color: rgb(142, 142, 142);
-    font-size: 100px;
+    font-size: 90px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
     font-family: sans-serif;
     text-align: center;
 }
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-button {
+    width: calc(80% - 10px);
+    height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgb(11, 77, 83);
+    border: none;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: rgb(9, 56, 60);
+}
+
+
