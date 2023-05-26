@@ -52,15 +52,16 @@ class JogoDaVelha {
                 if (target.innerText !== "") return; // Se já tiver algo digitado no quadrado, não faz nada
 
                 this.currentGame.push(`${i}`);
-                console.log(this.currentGame);
-                // console.log(i);
 
                 this.checkWinner();
 
                 target.innerText = this.currentPlayer;
+
                 this.changeCurrentPlayer();
 
-                console.log(this);
+                if (this.xGame.length + this.oGame.length === 9) {
+                    this.endGame(true);
+                }
             });
         }
     }
@@ -117,14 +118,17 @@ class JogoDaVelha {
         });
     }
 
-    endGame(): void {
+    endGame(aTie?: boolean): void {
         this.body.style.backgroundColor = "rgba(0, 42, 46, 0.92)";
 
         this.playerDisplayContainer.classList.add("hide");
         this.displayWinner.classList.remove("hide");
-        this.displayWinner.innerText = `O vencedor foi: ${this.currentPlayer}`;
         this.gameIsOver = true;
         this.resetButton.classList.remove("hide");
+
+        if (!aTie) this.displayWinner.innerText = `O vencedor foi: ${this.currentPlayer}`;
+        else this.displayWinner.innerText = "Ops! Parece que deu velha...";
+
         this.reset();
     }
 }
